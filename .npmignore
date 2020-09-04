@@ -1,0 +1,8 @@
+src
+test
+.eslint*
+.nvmrc
+.travis.yml
+rollup.config.js
+.gitignore
+.babelrc
