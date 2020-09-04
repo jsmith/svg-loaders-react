@@ -1,28 +1,29 @@
 {
-  "name": "svg-loaders-react",
+  "name": "@jsmith21/svg-loaders-react",
   "version": "2.2.1",
   "description": "React implementation of the SVG Loaders library by Sam Herbert",
   "repository": {
     "type": "git",
     "ur;": "https://github.com/ajwann/svg-loaders-react"
   },
-  "main": "dist/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "types": "index.d.ts",
   "peerDependendies": {
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.4.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
-    "babel-cli": "^6.26.0",
+    "@rollup/plugin-babel": "^5.2.0",
     "babel-eslint": "^10.0.2",
     "babel-jest": "^24.8.0",
-    "babel-loader": "^8.0.6",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.7.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^6.0.0",
@@ -30,20 +31,17 @@
     "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.13.0",
-    "identity-obj-proxy": "^3.0.0",
     "jest": "^24.8.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "webpack": "^4.29.0",
-    "webpack-cli": "^3.2.1"
+    "rollup": "^2.26.10"
   },
   "scripts": {
     "lint": "eslint --ext .js,.ts,.tsx .",
     "lint:fix": "eslint --ext .js,.ts,.tsx . --fix",
     "test": "jest",
     "test:dev": "jest --watch",
-    "start": "webpack --watch",
-    "build": "webpack --mode production"
+    "build": "rollup --config"
   },
   "jest": {
     "setupFiles": [
